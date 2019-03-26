@@ -1,0 +1,10 @@
+package com.leetcode.algorithms;
+
+public class ListNode {
+    int val;
+    public ListNode next;
+    public ListNode(int x) {
+    val = x;
+    next = null;
+    }
+}
