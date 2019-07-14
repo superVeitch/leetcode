@@ -4,6 +4,9 @@ import com.leetcode.algorithms.listNode.MergeTwoLists;
 import com.leetcode.algorithms.listNode.ReverseList;
 import com.leetcode.algorithms.rangeSumBST.*;
 import com.leetcode.target.SingleNumber;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Test;
 
 import java.lang.reflect.Method;
@@ -70,8 +73,9 @@ public class ExecutorRunTest {
     @Test
     public void searchInsert(){
         SearchInsert si = new SearchInsert();
-        int[] i = new int[]{1,3,5,6};
-        System.out.println(si.searchInsert(i, 2));
+//        int[] i = new int[]{1,3,5,6};
+//        System.out.println(si.searchInsert(i, 2));
+      System.out.println(si.search(new int[]{2}, 2));
     }
 
     @Test
@@ -196,4 +200,71 @@ public class ExecutorRunTest {
 //        System.out.println(mp.maxProfit(new int[]{7,1,5,3,6,4}));
         System.out.println(mp.maxProfitV2(new int[]{7,1,5,3,6,4}));
     }
+
+    @Test
+    public void longestCommonPrefix(){
+        LongestCommonPrefix l = new LongestCommonPrefix();
+        String[] s = new String[]{"flower","flow","flight"};
+        System.out.println(l.longestCommonPrefix(s));
+    }
+
+    @Test
+    public void kthSmallest(){
+        KthSmallest l = new KthSmallest();
+        TreeNode treeNode = new TreeNode(10);
+        treeNode.left = new TreeNode(5);
+        treeNode.left.left = new TreeNode(3);
+        treeNode.left.right = new TreeNode(7);
+        treeNode.right = new TreeNode(15);
+        treeNode.right.right = new TreeNode(18);
+        int a = l.kthSmallest(treeNode, 3);
+    }
+
+    public static void main(String[] args) {
+//      AtomicInteger atomicInteger = new AtomicInteger(0);
+//      System.out.println(atomicInteger.get());
+//      atomicInteger.getAndIncrement();
+//      System.out.println(atomicInteger.get());
+//      int i = 1;
+//      System.out.println(i++);
+//        Optional<Object> value = Optional.empty();
+//        value.map(String::valueOf);
+//        String s = null;
+//        System.out.println(String.valueOf(s));
+//      System.out.println("mions".hashCode());
+//      System.out.println(System.nanoTime());
+//      System.out.println(System.currentTimeMillis());
+      List<String>  defaultTimeRanges = new ArrayList<>();
+      System.out.println(defaultTimeRanges);
+      System.out.println(String.join(";", defaultTimeRanges));
+    }
+
+    @Test
+  public void wordPattern(){
+      WordPattern wp = new WordPattern();
+      System.out.println(wp.wordPattern("abba", "dog dog dog dog"));
+    }
+
+    @Test
+  public void reverseBits(){
+      int n = 40;
+      int a=0;
+      binaryToDecimal(n);
+      for(int i=0;i<=31;i++){
+        binaryToDecimal((1&(n>>i))<<(31-i));
+        a=a+((1&(n>>i))<<(31-i));
+
+      }
+
+      System.out.println(a);
+    }
+
+  public void binaryToDecimal(int n){
+    String str = "";
+    while(n!=0){
+      str = n%2+str;
+      n = n/2;
+    }
+    System.out.println(str);
+  }
 }

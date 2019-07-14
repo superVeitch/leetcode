@@ -22,9 +22,9 @@ public class PlusOne {
 
     public int[] plusOne(int[] digits) {
         int[] re = new int[digits.length];
-        int[] re1 = new int[digits.length+1];
+        int[] re1 = new int[digits.length + 1];
         int add = 1;
-        for (int i = digits.length-1; i >= 0; i--) {
+        for (int i = digits.length - 1; i >= 0; i--) {
             if (i == 0 && digits[0] == 9 && add == 1) {
                 re1[0] = 1;
                 return re1;
@@ -34,7 +34,7 @@ public class PlusOne {
                         re[i] = 0;
                     } else {
                         add = 0;
-                        re[i] = digits[i]+1;
+                        re[i] = digits[i] + 1;
                     }
                 } else {
                     re[i] = digits[i];

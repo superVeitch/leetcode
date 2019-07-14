@@ -28,6 +28,7 @@ public class FindMedianSortedArrays {
         }
         int iMin = 0, iMax = m, halfLen = (m + n + 1) / 2;
         while (iMin <= iMax) {
+            // 二分查找
             int i = (iMin + iMax) / 2;
             int j = halfLen - i;
             if (i < iMax && B[j - 1] > A[i]) {
@@ -43,6 +44,7 @@ public class FindMedianSortedArrays {
                 } else {
                     maxLeft = Math.max(A[i - 1], B[j - 1]);
                 }
+                // m+n为奇数时
                 if ((m + n) % 2 == 1) {
                     return maxLeft;
                 }

@@ -45,12 +45,25 @@ public class SearchInsert {
         return 0;
     }
 
-    public int searchInsert2(int[] nums, int target) {
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] >= target) {
-                return i;
+    public int search(int[] nums, int target) {
+        int length = nums.length;
+        if (nums[length-1] < target || nums[0] > target || length > 10001 || length < 0){
+            return -1;
+        }
+
+        int lo = 0;
+        int hi = length-1;
+        while (lo <= hi){
+            int mid = lo + (hi -lo) / 2;
+            if (target < nums[mid]){
+                hi = mid-1;
+            } else if (target > nums[mid]) {
+                lo = mid + 1;
+            } else {
+                return mid;
             }
         }
-        return nums.length;
+        return -1;
+
     }
 }
